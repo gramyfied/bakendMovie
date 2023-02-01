@@ -15,9 +15,9 @@ router.get("/movies", async (req, res) => {
     console.log(data)
     res.json({ movies: data.results });
   } catch(err) {
+    res.status(500).send({ message: 'Error fetch movies' });
     console.error(err);
   }
-  return res.json(data);
 });
 
 module.exports = router;
