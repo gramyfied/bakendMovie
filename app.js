@@ -17,4 +17,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 
+const PORT = process.env.PORT ?? 8080;
+app.listen(PORT, () => {
+    console.log(`configuration du port ${PORT}`)
+})
 module.exports = app;
